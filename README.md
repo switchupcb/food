@@ -5,22 +5,27 @@
 - supports Obsidian Bases Food Queries.
 - supports recursive Ingredient Management.
 
-![Spreadsheet with Obsidian Base Views and Food Macronutrients, Micronutrients, and Minerals](food-database-preview.png)
+![Spreadsheet with Obsidian Base Views and Food Macronutrients, Micronutrients, and Minerals](/preview/food-database-preview.png)
 
+---
 
 > **Want the complete plug-and-play Obsidian Vault?**  
 > You get the turnkey Starter Kit at **[SwitchUpCB (Join Waitlist)](mailto:contact@switchupcb.com?subject=Food%20Base%20Launch%20Notification%20Request&body=Hey%20SwitchUpCB%2C%0A%0AThis%20form%20is%20sent%20from%20your%20GitHub%20repository%20for%20'food'.%0A%0APlease%20let%20me%20know%20when%20you%20launch%20the%20Starter%20Kit%20for%20the%20food%20base.)**.
 >
 > This kit includes
+> - **Mobile Synchronization Command** used to run this script on a phone.
+> - **Template Commands** used to create `Food (Manual)` and `Diet (Manual, RDAs)` files.
 > - `Food Database.base` used to manage foods/ingredients.
 > - `Food Diet Database.base` used to manage diets.
-> - 42-nutrient dynamic scaling formulas in each `.base` view.
-> - Templater templates to create `Food (Manual)` and `Diet (Manual, RDAs)` files.
-> - Frontmatter Properties Autofill Configuration file which saves you time managing your food database.
-> - **Video Setup Guide** which saves you time setting up your food database.
-> - **Online Publish Guide** which helps you share your food and diets to friends or fans.
-> - **AI/Gemini/Claude Food-Diet Optimization Prompts** to save you time with complex food-diet decisions.
+> - `_template.base` food query saves you time creating food queries.
+> - `.base` views contain 42-nutrient formulas with custom serving quantity scaling.
+> - `properties.md` frontmatter autofill configuration file for property-value autocompletion in every `.md` and `.base` file.
+> - a **Video Setup Guide** which saves you time setting up your personal food database.
+> - an **Online Publish Guide** which helps you share your food and diets to friends, family, and online tools (e.g., Google Search Gemini).
+> - an **AI/Gemini/Claude Food-Diet Optimization Prompt Guide** to save you time with complex food-diet decisions.
 > 
+
+![Dropdown with Obisidian Template Options](/preview/food-database-mobile_sync-preview.png)
 
 ## Table of Contents
 
@@ -89,7 +94,7 @@ Open your vault in Obsidian (`v1.9+` with core **Bases** enabled) to browse, fil
 
 `unique_foods.py` flags same `(food, unit)` with different nutrition numbers with  (`needs_review: true`) and an exact `review_reason` diff when MacroFactor logs the same `(food, unit)` with different nutrition numbers.
 
-![](food-database-sndm-resolution-preview.png)
+![](/preview/food-database-sndm-resolution-preview.png)
 
 Here is how to resolve these foods using the Frontmatter/Obsidian Base table.
 
