@@ -39,7 +39,7 @@ You can get started by running the Obsidian `templater` files at [`/_templater/`
 >   - `.base` views contain 56-nutrient formulas with custom serving quantity scaling.
 > - **`properties.md`** frontmatter autofill-configuration file for property-value autocompletion in every `.md` and `.base` file.
 
-![Dropdown with Obisidian Template Options](/preview/food-database-mobile_sync-preview.png)
+![Dropdown with Obisidian Template Options](/preview/food-base-modal-preview.png)
 
 ## Table of Contents
 
