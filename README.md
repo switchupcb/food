@@ -1,44 +1,59 @@
-# Food Base (`unique_foods.py`)
+# Food Base (`Sync Macrofactor Log.md`)
 
-**Your personal food database in an Obsidian Vault**.
-- synchronizes with MacroFactor Food Log.
-- supports Obsidian Bases Food Queries.
-- supports recursive Ingredient Management.
+**Your personal food database in an Obsidian Vault.**
+
+| Module              | What You Can Do                                                                                                                          | Where Is It?                                                         |
+| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------- |
+| **Food Base**       | Synchronize your MacroFactor food log with Obsidian notes/bases, recursively manage ingredients, and query foods.                        | ✅ Core Templater commands (`Sync Log`, `Sync Brands`, `Create Food`) |
+| **Food Base Diet**  | Manage your diets' foods, macronutrient, and micronutrient targets.                                                                      | Starter Kit                                                          |
+| **Food Base Bank**  | Manage your food as an asset, your food cost, and your food storage locations.                                                           | Starter Kit                                                          |
+| **Food Base Route** | Generate food-asset restock-routes optimized to save you energy, time, money, or any other customized cost-value when you shop for food. | Starter Kit                                                          |
+
+_Food Base doesn't require AI yet structures all the information your AI assistant needs for even more food workflows!_
 
 ![Spreadsheet with Obsidian Base Views and Food Macronutrients, Micronutrients, and Minerals](/preview/food-database-preview.png)
 
 ---
 
-> **Want the complete plug-and-play Obsidian Vault?**  
-> You get the Starter Kits at **[SwitchUpCB (Food)](https://switchupcb.com/food/checkout)**.
+You can get started by running the Obsidian `templater` files at [`/_templater/`](/_templater/).
+
+> **Where is the plug-and-play Obsidian Vault?**  
+> You get the Starter Kit at **[SwitchUpCB (Food)](https://switchupcb.com/food/checkout)**.
 >
-> These kits include
-> - **Pre-Configured Obsidian Vault**: Ready to open on Desktop, iOS, and Android with plugins pre-installed and configured.
-> - **Mobile Synchronization Command** used to synchronize your MacroFactor Food Log CSV on a phone or computer.
-> - **Template Commands** used to create `Food (Manual)` and `Diet (Manual, RDAs)` files.
-> - `Food Database.base` used to manage foods/ingredients.
-> - `Food Diet Database.base` used to manage diets.
-> - `_template.base` food query saves you time creating food queries.
-> - `.base` views contain 42-nutrient formulas with custom serving quantity scaling.
-> - `properties.md` frontmatter autofill configuration file for property-value autocompletion in every `.md` and `.base` file.
-> - **Setup Guide** which saves you time setting up your personal food database.
-> 
+> This kit includes
+> - **SETUP GUIDE.md** which saves you time setting up your personal food database.
+> - **Pre-Configured Obsidian Vault (40+ files)**: Ready to open on Desktop, iOS, and Android with plugins pre-installed and configured.
+> - **All Template Commands (Mobile/Desktop Supported)** used to synchronize your MacroFactor CSV data on a phone or computer.
+>   - `Sync All` modules with a single command, 
+>   - `Generate Restock Routes`, 
+>   - `Log Bank Action`,
+>   - `Manage Diets`, `Food (Manual)`, `Diet (Manual, RDAs)`,
+>   - and more.
+> - **All Database Views** used to manage the
+>   - `Food Database.base`
+>   - `Food Diet Database.base`
+>   - `Food Bank Database.base`
+>   - `Food Route Database.base`
+> **56-nutrient formulas**
+>   - `_template.base` food query saves you time creating food queries.
+>   - `.base` views contain 56-nutrient formulas with custom serving quantity scaling.
+> - **`properties.md`** frontmatter autofill-configuration file for property-value autocompletion in every `.md` and `.base` file.
 
 ![Dropdown with Obisidian Template Options](/preview/food-database-mobile_sync-preview.png)
 
 ## Table of Contents
 
-| Section                                                                                                                                                     | Description                                                                                                        |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
-| **[What does Food Base do?](#what-does-food-base-do)**                                                                                                      | Overview of MacroFactor sync, Obsidian Bases food queries, ingredient auto-banning, and diet protocols.            |
-| **[Quickstart](#quickstart-how-do-you-set-up-food-base)**                                                                    | 3-step setup guide for installing dependencies, running `unique_foods.py`, and opening your vault.                 |
-| **[How do you resolve foods with the same name, but different macronutrients?](#how-do-you-resolve-foods-with-the-same-name-but-different-macronutrients)** | Frontmatter controls (`reviewed`, `set_as_final_version`, `set_as_only_version`, `set_as_unique`, `duplicate_of`). |
-| **[License](#license)**                                                                                                                                     | MIT open-source licensing and contribution guidelines.                                                             |
+| Section                                                                                                                                                          | Description                                                                                                                      |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| **[What does Food Base (`Sync Macrofactor Log.md`) do?](#what-does-food-base-do)**                                                                               | Overview of MacroFactor food log synchronization, Obsidian Bases food queries, ingredient auto-banning, and diet protocols.      |
+| **[Quickstart](#quickstart-how-do-you-set-up-food-base)**                                                                                                        | 3-step setup guide for installing dependencies, exporting your food log from Macrofactor, and running `Sync Macrofactor Log.md`. |
+| **[FAQ: How do you resolve foods with the same name, but different macronutrients?](#how-do-you-resolve-foods-with-the-same-name-but-different-macronutrients)** | Frontmatter controls (`reviewed`, `set_as_final_version`, `set_as_only_version`, `set_as_unique`, `duplicate_of`).               |
+| **[LICENSE](#license)**                                                                                                                                          | MIT open-source licensing and contribution guidelines.                                                                           |
 
 
 
 
-## What does Food Base do?
+## What does Food Base (`Sync Macrofactor Log.md`) do?
 
 **MacroFactor Synchronization**
 - Parses `MacroFactor-*.csv` exports into normalized `1x serving` Markdown notes inside `./food-base`. 
@@ -52,46 +67,35 @@
 - Audit foods as `unreviewed`, `allowed`, `banned`, or `override`. 
 - Linking `[[Ingredients]]` in YAML automatically propagates `banned` status and `ban_reason: "Contains [[Ingredient]]"` across every parent food containing a blocked ingredient—and cleanly restores prior status if unbanned.
 
-**Diets & Protocols** 
-- Pair your food catalog with dedicated diet notes containing your MacroFactor calorie/macro targets, micronutrient baselines, and qualitative food trade-off rules.
-
 ## Quickstart (How do you set up Food Base?)
 
-### 1. Install Dependencies
-Requires Python 3.10+.
+### 1. Add Templates to Your Obsidian Vault
 
-```bash
-pip install -r requirements.txt
-```
+1. Create an Obsidian vault (`v1.9+`).
+2. Install the community plugin [**Templater**](https://silentvoid13.github.io/Templater/) and enable it.
+3. Copy the template files from [`/_templater/`](/_templater/) into your vault's Templater folder (e.g., `/_templater/`):
+   - `Sync Macrofactor Log.md`
+   - `Sync Macrofactor Brands.md`
+   - `Create Food (Manual).md`
 
-### 2. Sync Your MacroFactor Export
+### 2. Export Your MacroFactor Food Log
 
-Drop your `MacroFactor-*.csv` export into your vault root and run the following command.
+1. Open the **MacroFactor** app.
+2. Go to **More → Data Management (Data Export) → Granular Export → Logs (Food Log) → select `All Time` → click `Export Food Log`**.
+3. Save the `.csv` file anywhere on your phone or computer.
 
-```bash
-python unique_foods.py
-```
+### 3. Sync Your Foods & Brands in Obsidian
 
-_Auto-detection automatically finds the newest `MacroFactor-*.csv` in the current or parent directory (or prompts you to drag-and-drop a CSV path)._
+1. Open Obsidian's Command Palette (`Ctrl/Cmd + P` on desktop, or `≡ → >_ Open command palette` on mobile).
+2. Run **`Templater: Create new note from template` → `Sync Macrofactor Log`** and select your exported `.csv` file.
+3. Run **`Templater: Create new note from template` → `Sync Macrofactor Brands`** to attach brand metadata to your foods
+4. You can use **`Create Food (Manual)`** to add custom foods and foods as ingredients by hand.
 
-**Optional flags**
-  
-```bash
-# Sync a specific file into a custom folder
-python unique_foods.py path/to/MacroFactor.csv --out ./food-base
+## FAQ
 
-# Partial sync (only process the last 30 days; skips unlogged archival)
-python unique_foods.py --days 30
-```
+### How do you resolve foods with the same name, but different macronutrients?
 
-### 3. Open in Obsidian
-
-Open your vault in Obsidian (`v1.9+` with core **Bases** enabled) to browse, filter, and manage your food database.
-
-
-## How do you resolve foods with the same name, but different macronutrients?
-
-`unique_foods.py` flags same `(food, unit)` with different nutrition numbers with  (`needs_review: true`) and an exact `review_reason` diff when MacroFactor logs the same `(food, unit)` with different nutrition numbers.
+`Sync Macrofactor Log.md` flags same `(food, unit)` with different nutrition numbers with  (`needs_review: true`) and an exact `review_reason` diff when MacroFactor logs the same `(food, unit)` with different nutrition numbers.
 
 ![](/preview/food-database-sndm-resolution-preview.png)
 
@@ -107,8 +111,8 @@ Here is how to resolve these foods using the Frontmatter/Obsidian Base table.
 
 ---
 
-## License
+## LICENSE
 
-MIT License — free to use, modify, and extend.
+[MIT License - Copyright (c) 2026 SwitchUpCB](/LICENSE)
 
-_PRs for Cronometer, MyFitnessPal, and other food-tracking adapters are supported._
+_PRs for Cronometer, MyFitnessPal, and other food-tracking adapters are accepted._
